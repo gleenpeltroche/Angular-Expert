@@ -1,28 +1,28 @@
 {
-  "name": "angular18-monorepo",
+  "name": "main-repo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/angular18-monorepo/src",
+  "sourceRoot": "apps/main-repo/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/angular18-monorepo",
-        "index": "apps/angular18-monorepo/src/index.html",
-        "browser": "apps/angular18-monorepo/src/main.ts",
+        "outputPath": "dist/apps/main-repo",
+        "index": "apps/main-repo/src/index.html",
+        "browser": "apps/main-repo/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/angular18-monorepo/tsconfig.app.json",
+        "tsConfig": "apps/main-repo/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/angular18-monorepo/public"
+            "input": "apps/main-repo/public"
           }
         ],
-        "styles": ["apps/angular18-monorepo/src/styles.scss"],
+        "styles": ["apps/main-repo/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "angular18-monorepo:build:production"
+          "buildTarget": "main-repo:build:production"
         },
         "development": {
-          "buildTarget": "angular18-monorepo:build:development"
+          "buildTarget": "main-repo:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "angular18-monorepo:build"
+        "buildTarget": "main-repo:build"
       }
     },
     "lint": {
@@ -74,7 +74,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/angular18-monorepo/jest.config.ts"
+        "jestConfig": "apps/main-repo/jest.config.ts"
       }
     }
   }

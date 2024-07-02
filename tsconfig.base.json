@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@shared-ui/components": ["libs/shared/ui/src/components/index.ts"],
+      "@shared-ui/icons": ["libs/shared/ui/src/icons/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
