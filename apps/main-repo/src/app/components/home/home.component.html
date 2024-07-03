@@ -1,7 +1,11 @@
 <!-- SIDEBAR COMPONENT -->
-<lib-sidebar />
+<lib-sidebar [sidebarCategories]="sidebarCategories()" [(categorySelected)]="categorySelected" [(subcategorySelected)]="subcategorySelected"/>
 
 <!-- MAIN CONTENT -->
-<main class="container p-4 pl-[270px]">
-  <guide-component />
+<main class="md:pl-[265px]">
+  <!-- @switch (categorySelected()) {
+    @case ("components") { <guide-component [subcategorySelected]="subcategorySelected()"/> }
+    @case ("components2") { <h2>OTRO COMPONENTE!!!!</h2> }
+  } -->
+  <router-outlet></router-outlet>
 </main>

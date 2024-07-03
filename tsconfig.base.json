@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@shared-ui/atoms": ["libs/shared/ui/src/atoms/index.ts"],
       "@shared-ui/components": ["libs/shared/ui/src/components/index.ts"],
-      "@shared-ui/icons": ["libs/shared/ui/src/icons/index.ts"]
+      "@shared-ui/icons": ["libs/shared/ui/src/icons/index.ts"],
+      "@shared-ui/test-components": ["libs/shared/test-components/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

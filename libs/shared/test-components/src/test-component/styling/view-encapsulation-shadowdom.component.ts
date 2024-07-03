@@ -1,6 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-
-// ViewEncapsulation.ShadowDom
 @Component({
     standalone: true,
     encapsulation: ViewEncapsulation.ShadowDom,

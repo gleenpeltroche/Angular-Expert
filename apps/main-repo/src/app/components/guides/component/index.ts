@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
-import { PseudoClass } from '../../../shared/guide-component/selectors';
-import { GuideStylingComponent } from '../../../shared/guide-component/styling';
+import { Component, input } from '@angular/core';
+import { GuideStylingComponent, PseudoClassComponent, OutputFunctionComponent, HostElementsComponent } from '@shared-ui/test-components';
 
 @Component({
   standalone: true,
-  imports: [PseudoClass, GuideStylingComponent],
+  imports: [
+    PseudoClassComponent, 
+    GuideStylingComponent, 
+    OutputFunctionComponent,
+    HostElementsComponent,
+  ],
   selector: 'guide-component',
-  templateUrl: 'template.html',
+  template: '',
 })
 export class GuideComponent {
   title = 'guide-component';
+  readonly subcategorySelected = input();
 }

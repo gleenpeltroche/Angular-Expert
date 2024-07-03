@@ -1,35 +1,35 @@
 <aside class="bg-gray-800 text-white w-64 min-h-screen p-4 fixed">
     <nav>
         <ul class="space-y-2">
+            @for (category of sidebarCategories() || []; track category.category) {
             <li>
-                <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                <div class="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer" (click)="onClickCategory(category.category)">
                     <div class="flex items-center">
                         <i class="mr-2"><lib-icon-inbox-stack /></i>
-                        <span>Components</span>
+                        <span>{{category.category | titlecase}}</span>
                     </div>
                     <i class="text-xs">
-                        @if (true) {
+                        @if (categorySelected() === category.category) {
                             <lib-icon-arrow-down />
                         } @else {
                             <lib-icon-arrow-right />
                         }
                     </i>
                 </div>
-                <ul class="ml-4">
-                    <li>
-                        <a class="block p-2 hover:bg-gray-700 flex items-center">
-                            <i class="mr-2 text-xs"><lib-icon-arrow-right/></i>
-                            Selector
-                        </a>
-                    </li>
-                    <li>
-                        <a class="block p-2 hover:bg-gray-700 flex items-center">
-                            <i class="mr-2 text-xs"><lib-icon-arrow-right/></i>
-                            Styling
-                        </a>
-                    </li>
-                </ul>
+                @if (categorySelected() === category.category) {
+                    <ul class="ml-4">
+                        @for (subcategory of category.subcategories; track subcategory.subcategory) {
+                            <li (click)="onClickSubcategory(subcategory.subcategory)" class="cursor-pointer">
+                                <a class="block p-2 hover:bg-gray-700 flex items-center">
+                                    <i class="mr-2 text-xs"><lib-icon-arrow-right /></i>
+                                    {{subcategory.subcategory | titlecase}}
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
             </li>
+            }
         </ul>
     </nav>
 </aside>

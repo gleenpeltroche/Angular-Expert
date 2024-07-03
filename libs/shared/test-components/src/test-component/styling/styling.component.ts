@@ -8,12 +8,12 @@ import { ViewEncapsulationNone } from './view-encapsulation-none.component';
     standalone: true,
     imports: [ViewEncapsulationEmulated, ViewEncapsulationShadowDom, ViewEncapsulationNone],
     template: `
-        <div class="grid grid-cols-1 divide-y">
+        <div class="flex flex-col divide-y gap-4">
             <view-encapsulation-emulated/>
             <view-encapsulation-shadowdom/>
             <view-encapsulation-none/>
         </div>
     `,
-    selector: 'guide-styling-component',
+    selector: 'guide-styling',
 })
 export class GuideStylingComponent { }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-// ViewEncapsulation.Emulated
-// Encapsultaion by default 
+// Encapsulation by default 
 @Component({
     standalone: true,
     template: `

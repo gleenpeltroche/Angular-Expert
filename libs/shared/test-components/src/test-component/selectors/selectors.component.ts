@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShowCodeComponent } from '@shared-ui/atoms';
 
 @Component({
     standalone: true,
@@ -11,12 +12,21 @@ export class NotPseudoClass { }
 
 @Component({
     standalone: true,
-    imports: [NotPseudoClass],
+    imports: [NotPseudoClass, ShowCodeComponent],
     template: `
-        <p>This component replace the button whit my custom button</p>
-        <p>Component selector</p>
+        <h2 class="text-2xl font-bold">Selectors</h2>
+        <show-code [codeString]="selector"/>
+        <show-code [codeString]="button"/>
         <button customize></button>
     `,
     selector: 'pseudoclass',
 })
-export class PseudoClass { }
+export class PseudoClassComponent {
+    selector: string = `@Component({
+    standalone: true,
+    template: '<button type="submit" class="my_custom_button_classes">Subscribe</button>',
+    selector: 'button[customize])',
+})
+export class NotPseudoClass { }`;
+    button: string = `'<button customize></button>'`;
+}
