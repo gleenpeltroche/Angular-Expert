@@ -33,6 +33,9 @@ export class HomeComponent {
         },
         {
           subcategory: "host-elements",
+        },
+        {
+          subcategory: "lifecycle",
         }
       ]
     },

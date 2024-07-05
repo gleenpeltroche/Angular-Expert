@@ -1,6 +1,6 @@
 import { Component, input, model } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconArrowDownComponent, IconArrowRightComponent, IconInboxStackComponent } from '@shared-ui/icons';
+import { IconArrowDownComponent, IconArrowRightComponent, IconInboxStackComponent } from '../../icons/icons.component';
 
 export interface SidebarCategories {
   category:      string;
@@ -18,11 +18,11 @@ export interface Subcategory {
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  
+
   readonly sidebarCategories = input.required<SidebarCategories[]>();
   categorySelected = model<string>('');
   subcategorySelected = model<string>('');
-  
+
   onClickCategory(category: string) {
     if(this.categorySelected() === category) return;
     this.categorySelected.set(category);

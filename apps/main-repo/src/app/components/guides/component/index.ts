@@ -1,15 +1,8 @@
 import { Component, input } from '@angular/core';
-import { GuideStylingComponent, PseudoClassComponent, OutputFunctionComponent, HostElementsComponent } from '@shared-ui/test-components';
 
 @Component({
   standalone: true,
-  imports: [
-    PseudoClassComponent, 
-    GuideStylingComponent, 
-    OutputFunctionComponent,
-    HostElementsComponent,
-  ],
-  selector: 'guide-component',
+  selector: 'app-guide-component',
   template: '',
 })
 export class GuideComponent {

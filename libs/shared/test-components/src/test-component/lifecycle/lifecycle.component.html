@@ -1,0 +1,30 @@
+<div>
+    <h2>Lifecycle!!</h2>
+    <p>si no hay input no se ejecuta el ngOnchanges</p>
+    <div class="flex w-100 gap-4 mt-4 mb-2">
+        <div>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
+            <input type="text"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="your name here" required [(ngModel)]="name" />
+        </div>
+        <div>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">Age</label>
+            <input type="number" step="1"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="your age here" required [(ngModel)]="age" />
+        </div>
+    </div>
+    <lib-my-button (click)="isChildVisible.set(!isChildVisible())" [buttonName]="buttonName()" />
+    <p>Execution order of Angular's lifecycle hooks</p>
+    <p>Dale click para mostrar en la consola el orden del ciclo de cambios de un componente</p>
+    <a href="https://angular.dev/guide/components/lifecycle#during-initialization" target="_blank" rel="noopener">Initialization
+        lifecicle</a>
+    @if(isChildVisible()) {
+    <test-lifecycle-child [inputValue]="age()" [value]="name()" />
+    <p>Cambia los valores para disparar el ciclo de cambios</p>
+    <a href="https://angular.dev/guide/components/lifecycle#subsequent-updates" target="_blank" rel="noopener">Subsequent updates
+        lifecicle</a>
+    }
+
+</div>
